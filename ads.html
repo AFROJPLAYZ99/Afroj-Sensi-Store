@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Loading Payment…</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body {
+  background: #0f172a;
+  color: white;
+  text-align: center;
+  padding: 40px;
+  font-family: Arial;
+}
+.box {
+  background: rgba(255,255,255,0.1);
+  padding: 25px;
+  border-radius: 20px;
+  margin-top: 40px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.5);
+}
+</style>
+
+<script>
+// Auto redirect after 6 seconds
+setTimeout(() => {
+  window.location.href = localStorage.getItem("redirect_payhip");
+}, 6000);
+</script>
+
+</head>
+<body>
+
+<h1>Please wait...</h1>
+<p>Your payment page is loading...</p>
+
+<div class="box">
+  <h2>Advertisement</h2>
+  <p>(Put your Google AdSense / banner ad here)</p>
+</div>
+
+<p>Redirecting in 6 seconds...</p>
+
+</body>
+</html>
