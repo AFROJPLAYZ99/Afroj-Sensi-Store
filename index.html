@@ -6,7 +6,38 @@
   <title>AFROJ Sensi Store</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    /* Announcement Bar */
+    .announce-bar {
+      width: 100%;
+      display: block;
+      padding: 14px;
+      background: linear-gradient(45deg, #ff0055, #ff8800);
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+      letter-spacing: 1px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 9999;
+      animation: announceFloat 3s ease-in-out infinite;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      text-decoration: none;
+    }
+    .announce-bar:hover {
+      filter: brightness(1.1);
+      transform: scale(1.02);
+    }
+    @keyframes announceFloat {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(6px); }
+      100% { transform: translateY(0px); }
+    }
+
     body {
+      padding-top: 60px; /* so announcement bar doesn't overlap */
       height: 100vh;
       display: flex;
       align-items: center;
@@ -26,8 +57,8 @@
       filter: blur(50px);
       animation: float 10s ease-in-out infinite alternate;
     }
-    .floating:nth-child(1) { width: 280px; height: 280px; background: #0072ff; top: 10%; left: 12%; animation-delay: 0s; }
     .floating:nth-child(2) { width: 380px; height: 380px; background: #00c6ff; bottom: 12%; right: 10%; animation-delay: 3s; }
+    .floating:nth-child(1) { width: 280px; height: 280px; background: #0072ff; top: 10%; left: 12%; animation-delay: 0s; }
 
     @keyframes float {
       0%,100% { transform: translate(0,0); }
@@ -67,7 +98,7 @@
       border-radius: 22px;
       padding: 40px 35px;
       width: 400px;
-      height: 420px; /* Fixed height for equal alignment */
+      height: 420px;
       text-align: center;
       backdrop-filter: blur(5px);
       box-shadow: 0 20px 45px rgba(0,0,0,0.5);
@@ -151,7 +182,14 @@
     }
   </style>
 </head>
+
 <body>
+
+  <!-- 🔥 ANNOUNCEMENT BAR WITH AUTO-APPLY COUPON -->
+  <a href="https://payhip.com/b/HRwlQ?coupon=GF16BKQ3EV" class="announce-bar">
+    🎉 Apply coupon Code <b></b> & Get 70% OFF 🔥 Limited Time Offer!
+  </a>
+
   <div class="floating"></div>
   <div class="floating"></div>
   <div class="glow"></div>
@@ -162,12 +200,14 @@
       <div class="content">
         <h1>Basic Pack 📂</h1>
         <div class="price">$19</div>
-        <p>Boost your gaming performance instantly!<br>
-           💨 Higher FPS | 🧠 Smoother Gameplay | 🔥 Reduced Lag<br><br>
-           Includes <b>Sensi + PC Optimization Pack</b> for instant smoothness.</p>
+        <p>
+          Boost your gaming performance instantly!<br>
+          💨 Higher FPS | 🧠 Smoother Gameplay | 🔥 Reduced Lag<br><br>
+          Includes <b>Sensi + PC Optimization Pack</b>.
+        </p>
       </div>
       <div>
-        <a class="btn" href="https://payhip.com/b/HRwlQ" target="_blank">💳 Buy Now</a>
+        <a class="btn" href="https://payhip.com/b/HRwlQ?coupon=GF16BKQ3EV" target="_blank">💳 Buy Now</a>
         <footer>© 2025 Afroj PlayZ 99 | All rights reserved</footer>
       </div>
     </div>
@@ -177,14 +217,18 @@
       <div class="content">
         <h1>Premium Pack 📦</h1>
         <div class="price">$99</div>
-        <p>Get god-level aim precision and smooth movement with higher FPS, FPS Boost upto 150+.<br>
-           🧩 Custom DPI + Sensitivity Settings<br>💥 Optimized for all PCs.</p> <br>Specially Low end PCs.</p>
+        <p>
+          Get god-level aim precision and smooth movement with higher FPS (150+).<br>
+          🧩 Custom DPI + Sensitivity Settings<br>
+          💥 Optimized for all PCs — especially low-end.
+        </p>
       </div>
       <div>
-        <a class="btn" href="https://payhip.com/b/HlMrj" target="_blank">💳 Buy Now</a>
+        <a class="btn" href="https://payhip.com/b/HlMrj?coupon=GF16BKQ3EV" target="_blank">💳 Buy Now</a>
         <footer>© 2025 Afroj PlayZ 99 | All rights reserved</footer>
       </div>
     </div>
   </div>
+
 </body>
 </html>
