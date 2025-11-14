@@ -1,46 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Loading Payment…</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advertisement</title>
 
-<style>
-body {
-  background: #0f172a;
-  color: white;
-  text-align: center;
-  padding: 40px;
-  font-family: Arial;
-}
-.box {
-  background: rgba(255,255,255,0.1);
-  padding: 25px;
-  border-radius: 20px;
-  margin-top: 40px;
-  box-shadow: 0 0 25px rgba(0,0,0,0.5);
-}
-</style>
+  <style>
+    body {
+      background: #0d0d0d;
+      color: white;
+      text-align: center;
+      padding: 40px;
+      font-family: Arial, sans-serif;
+    }
 
-<script>
-// Auto redirect after 6 seconds
-setTimeout(() => {
-  window.location.href = localStorage.getItem("redirect_payhip");
-}, 6000);
-</script>
+    .box {
+      background: #1a1a1a;
+      padding: 30px;
+      border-radius: 12px;
+      width: 90%;
+      margin: auto;
+      max-width: 400px;
+      margin-top: 50px;
+    }
 
+    #timer {
+      font-size: 22px;
+      margin-top: 20px;
+      color: #00ff99;
+    }
+  </style>
 </head>
 <body>
 
-<h1>Please wait...</h1>
-<p>Your payment page is loading...</p>
+  <div class="box">
+    <h2>Sponsored Ad</h2>
+    <p>Your ad will appear here…</p>
 
-<div class="box">
-  <h2>Advertisement</h2>
-  <p>(Put your Google AdSense / banner ad here)</p>
-</div>
+    <div id="timer">Redirecting in 6 seconds...</div>
+  </div>
 
-<p>Redirecting in 6 seconds...</p>
+  <script>
+    let seconds = 6;
+    let payhipURL = localStorage.getItem("redirect_payhip");
+
+    let interval = setInterval(() => {
+      seconds--;
+      document.getElementById("timer").innerText =
+        "Redirecting in " + seconds + " seconds...";
+
+      if (seconds <= 0) {
+        clearInterval(interval);
+        window.location.href = payhipURL;
+      }
+    }, 1000);
+  </script>
 
 </body>
 </html>
